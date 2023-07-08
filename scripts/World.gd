@@ -26,11 +26,14 @@ func _process(delta):
 			$Bullet.position = $Player/Gun/Point.global_position
 			player = $Bullet
 			$Bullet.visible = true
+			$Bullet/CollisionShape2D.disabled = false
+			$Bullet.collision_layer = 1
 			targetZoom = BULLETZOOM
 		else:
 			currentForm = 0
 			player = $Player
 			$Bullet.visible = false
+			$Bullet/CollisionShape2D.disabled = true
 			$Bullet.collision_layer = 0
 			targetZoom = PLAYERZOOM
 
