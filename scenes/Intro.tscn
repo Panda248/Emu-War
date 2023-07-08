@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://dv3k6b620sf2k"]
+[gd_scene load_steps=4 format=3 uid="uid://dv3k6b620sf2k"]
+
+[ext_resource type="Script" path="res://scenes/CutsceneManager.gd" id="1_75wk2"]
+[ext_resource type="Texture2D" uid="uid://bb1dht26pk8i1" path="res://assets/cutscenes/park.png" id="2_vcba8"]
+[ext_resource type="Texture2D" uid="uid://dqk1gwnr5vms0" path="res://assets/cutscenes/gouge.png" id="3_y1y64"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -7,3 +11,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_75wk2")
+
+[node name="Scenes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Scene1" type="Control" parent="Scenes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Scenes/Scene1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_vcba8")
+
+[node name="Scene2" type="Control" parent="Scenes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Scenes/Scene2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_y1y64")
+
+[node name="Scene3" type="Control" parent="Scenes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Scenes/Scene3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Scene4" type="Control" parent="Scenes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Scenes/Scene4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
