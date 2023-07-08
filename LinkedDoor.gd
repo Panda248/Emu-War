@@ -12,7 +12,12 @@ func _process(delta):
 
 
 func _on_target_body_entered(body):
-	$Door.visible = false
+	if body != $Target/StaticBody:
+		$Door.visible = false
+		$Door/CollisionShape2D.disabled = true
 
 func _on_target_body_exited(body):
-	$Door.visible = true
+	if body != $Target/StaticBody:
+		pass
+		#$Door.visible = true
+		#$Door/CollisionShape2D.disabled = false

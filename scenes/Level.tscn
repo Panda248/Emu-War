@@ -204,3 +204,12 @@ position = Vector2(-2, 257)
 
 [node name="LinkedDoor" parent="." instance=ExtResource("6_8b6gs")]
 position = Vector2(446, 268)
+
+[node name="Target" parent="LinkedDoor" index="0"]
+position = Vector2(-676, 34)
+metadata/_edit_group_ = true
+
+[node name="Door" parent="LinkedDoor" index="1"]
+position = Vector2(-116, -3)
+
+[editable path="LinkedDoor"]
