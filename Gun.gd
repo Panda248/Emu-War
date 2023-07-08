@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Gun
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,4 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var mousePosition = get_viewport().get_mouse_position()
+	rotate(get_angle_to(mousePosition))

@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwqqpj6e5t6oo"]
+[gd_scene load_steps=5 format=3 uid="uid://dwqqpj6e5t6oo"]
 
 [ext_resource type="PackedScene" uid="uid://dqsy3urhnyylg" path="res://scenes/Bullet.tscn" id="1_d5ma5"]
 [ext_resource type="Script" path="res://scenes/World.gd" id="1_gtwcb"]
+[ext_resource type="PackedScene" uid="uid://duw6asbmact82" path="res://Player.tscn" id="2_e8gip"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_j1vdp"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gtwcb")
+
+[node name="Player" parent="." instance=ExtResource("2_e8gip")]
 
 [node name="Bullet" parent="." instance=ExtResource("1_d5ma5")]
 
