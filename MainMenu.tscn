@@ -32,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 70
+theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
@@ -42,7 +42,7 @@ alignment = 1
 [node name="Title" type="Label" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_en3t0")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 90
 text = "EMU WAR"
 horizontal_alignment = 2
 
@@ -53,7 +53,7 @@ theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0.0862745, 1)
 theme_override_colors/font_hover_color = Color(0.756863, 0.403922, 0.815686, 1)
 theme_override_fonts/font = ExtResource("1_en3t0")
-theme_override_font_sizes/font_size = 39
+theme_override_font_sizes/font_size = 55
 text = "START"
 flat = true
 alignment = 2
@@ -65,7 +65,7 @@ theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0.0862745, 1)
 theme_override_colors/font_hover_color = Color(0.757295, 0.404858, 0.816452, 1)
 theme_override_fonts/font = ExtResource("1_en3t0")
-theme_override_font_sizes/font_size = 39
+theme_override_font_sizes/font_size = 55
 text = "SETTINGS"
 flat = true
 alignment = 2
@@ -78,7 +78,11 @@ theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
 theme_override_colors/font_pressed_color = Color(0.85098, 0, 0.0862745, 1)
 theme_override_colors/font_hover_color = Color(0.757295, 0.404858, 0.816452, 1)
 theme_override_fonts/font = ExtResource("1_en3t0")
-theme_override_font_sizes/font_size = 39
+theme_override_font_sizes/font_size = 55
 text = "LEAVE"
 flat = true
 alignment = 2
+
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/LeaveButton" to="." method="_on_leave_button_pressed"]
