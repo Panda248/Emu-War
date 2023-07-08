@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq16g3pou51gr"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_8rf28"]
+[ext_resource type="FontFile" uid="uid://dtw50ybu8w0cx" path="res://assets/fonts/rowdies/Rowdies-Light.ttf" id="1_en3t0"]
+[ext_resource type="Texture2D" uid="uid://cxl0ci4isoi83" path="res://assets/cutscenes/anger.png" id="2_kwxt1"]
+
+[node name="Start" type="CanvasLayer"]
+script = ExtResource("1_8rf28")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kwxt1")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_en3t0")
+theme_override_font_sizes/font_size = 60
+text = "EMU WAR"
+horizontal_alignment = 2
+
+[node name="StartButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0.0862745, 1)
+theme_override_colors/font_hover_color = Color(0.756863, 0.403922, 0.815686, 1)
+theme_override_fonts/font = ExtResource("1_en3t0")
+theme_override_font_sizes/font_size = 39
+text = "START"
+flat = true
+alignment = 2
+
+[node name="SettingButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0.0862745, 1)
+theme_override_colors/font_hover_color = Color(0.757295, 0.404858, 0.816452, 1)
+theme_override_fonts/font = ExtResource("1_en3t0")
+theme_override_font_sizes/font_size = 39
+text = "SETTINGS"
+flat = true
+alignment = 2
+icon_alignment = 2
+
+[node name="LeaveButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
+theme_override_colors/font_pressed_color = Color(0.85098, 0, 0.0862745, 1)
+theme_override_colors/font_hover_color = Color(0.757295, 0.404858, 0.816452, 1)
+theme_override_fonts/font = ExtResource("1_en3t0")
+theme_override_font_sizes/font_size = 39
+text = "LEAVE"
+flat = true
+alignment = 2

@@ -18,6 +18,7 @@ func _physics_process(delta):
 		set_global_rotation(angleTo)
 	velocity = Vector2.RIGHT.rotated(rotation)*MOVE_SPEED
 	
+	
 	if move_and_slide():
 		get_parent().changeToPlayer()
  

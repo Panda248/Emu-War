@@ -447,6 +447,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="Scenes/Scene5/Background"]
+layout_mode = 0
 offset_left = 1187.0
 offset_top = 282.0
 offset_right = 1663.0

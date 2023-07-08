@@ -20,3 +20,9 @@ shape = SubResource("CapsuleShape2D_xale8")
 
 [node name="Gun" parent="." instance=ExtResource("3_uk1fm")]
 position = Vector2(21, 5)
+
+[node name="LeftHand" type="Marker2D" parent="."]
+position = Vector2(-17, 2)
+
+[node name="RightHand" type="Marker2D" parent="."]
+position = Vector2(20, 8)

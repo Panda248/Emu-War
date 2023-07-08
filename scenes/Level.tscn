@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwqqpj6e5t6oo"]
+[gd_scene load_steps=9 format=3 uid="uid://dwqqpj6e5t6oo"]
 
 [ext_resource type="Script" path="res://scripts/World.gd" id="1_3824v"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_vl2m3"]
 [ext_resource type="Texture2D" uid="uid://cfm27ipf6p5sv" path="res://grass.png" id="3_odbta"]
 [ext_resource type="PackedScene" uid="uid://dqsy3urhnyylg" path="res://scenes/Bullet.tscn" id="4_0cfd0"]
 [ext_resource type="PackedScene" uid="uid://8ytecw1tw4y" path="res://Player.tscn" id="5_06jqd"]
-[ext_resource type="PackedScene" path="res://LinkedDoor.tscn" id="6_8b6gs"]
-[ext_resource type="Texture2D" uid="uid://djn2a2oi5tyvm" path="res://assets/emu1.png" id="7_jeuny"]
+[ext_resource type="PackedScene" uid="uid://b8d1wkfnelr10" path="res://LinkedDoor.tscn" id="6_8b6gs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flkbw"]
 texture = ExtResource("3_odbta")
@@ -212,9 +211,5 @@ metadata/_edit_group_ = true
 
 [node name="Door" parent="LinkedDoor" index="1"]
 position = Vector2(-116, -3)
-
-[node name="Emu1" type="Sprite2D" parent="."]
-position = Vector2(574, 153)
-texture = ExtResource("7_jeuny")
 
 [editable path="LinkedDoor"]
