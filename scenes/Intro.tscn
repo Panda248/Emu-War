@@ -423,7 +423,7 @@ offset_right = 247.0
 offset_bottom = -888.68
 grow_horizontal = 2
 theme = ExtResource("4_bn657")
-text = "Those darn emus..."
+text = "\"Those darn emus...\""
 visible_characters = 0
 visible_ratio = 0.01
 
@@ -452,7 +452,7 @@ offset_top = 282.0
 offset_right = 1663.0
 offset_bottom = 348.0
 theme = ExtResource("4_bn657")
-text = "They're gonna pay!"
+text = "\"They're gonna pay!\""
 
 [node name="Control2" type="Control" parent="Scenes/Scene5"]
 anchors_preset = 0

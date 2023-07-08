@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://j4kjsp4sikc2"]
+[gd_scene load_steps=10 format=3 uid="uid://j4kjsp4sikc2"]
 
 [ext_resource type="Script" path="res://scripts/World.gd" id="1_avbdp"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_werab"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqsy3urhnyylg" path="res://scenes/Bullet.tscn" id="4_db68m"]
 [ext_resource type="PackedScene" uid="uid://8ytecw1tw4y" path="res://Player.tscn" id="5_u0dri"]
 [ext_resource type="PackedScene" path="res://LinkedDoor.tscn" id="6_aykwx"]
+[ext_resource type="Texture2D" uid="uid://djn2a2oi5tyvm" path="res://assets/emu1.png" id="7_45xnc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flkbw"]
 texture = ExtResource("3_e77dp")
@@ -188,7 +189,6 @@ sources/0 = SubResource("TileSetAtlasSource_flkbw")
 script = ExtResource("1_avbdp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_werab")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -217,5 +217,9 @@ position = Vector2(-116, -3)
 
 [node name="CollisionShape2D" parent="LinkedDoor/Door" index="1"]
 disabled = true
+
+[node name="Emu1" type="Sprite2D" parent="."]
+position = Vector2(574, 153)
+texture = ExtResource("7_45xnc")
 
 [editable path="LinkedDoor"]
