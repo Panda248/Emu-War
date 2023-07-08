@@ -1,7 +1,7 @@
 extends Control
 
 var index = 0
-var total_actions = 0
+var total_actions
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	total_actions = get_child_count()-1
@@ -13,6 +13,7 @@ func _ready():
 
 func start():
 	show()
+	print(str(index))
 	if(get_node("Background").has_node("AnimationPlayer")):
 		get_node("Background").get_node("AnimationPlayer").play("action")
 
