@@ -36,5 +36,5 @@ func slowZoom():
 	if zoom != targetZoom:
 		if targetZoom-zoom > 0:
 			zoom+=0.01
-		else:
+		elif targetZoom-zoom < 0:
 			zoom-=0.01

@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://3f2pmcvngwt6" path="res://assets/gun.png" id="2_a80c6"]
 
 [node name="Gun" type="Node2D"]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_61b7x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(70, -26.6667)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_a80c6")
 
 [node name="Point" type="Marker2D" parent="."]
-position = Vector2(117, -48)
+position = Vector2(196.667, -73.3333)

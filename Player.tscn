@@ -19,4 +19,4 @@ position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_xale8")
 
 [node name="Gun" parent="." instance=ExtResource("3_uk1fm")]
-position = Vector2(59, 2)
+position = Vector2(21, 5)
