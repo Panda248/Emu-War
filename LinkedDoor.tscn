@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8d1wkfnelr10"]
+
+[ext_resource type="Script" path="res://LinkedDoor.gd" id="1_oxaor"]
+[ext_resource type="Texture2D" uid="uid://ectf4i5twk5f" path="res://istockphoto-1370315503-612x612.jpg" id="2_6u7gc"]
+[ext_resource type="Texture2D" uid="uid://nikovfgs4vwp" path="res://New Piskel (1).png" id="3_6abc5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kn1uj"]
+radius = 47.0106
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bxe7"]
+radius = 62.8172
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iq7li"]
+size = Vector2(63, 117)
+
+[node name="LinkedDoor" type="Node2D"]
+script = ExtResource("1_oxaor")
+
+[node name="Target" type="Sprite2D" parent="."]
+position = Vector2(-268, 0)
+scale = Vector2(0.158497, 0.158497)
+texture = ExtResource("2_6u7gc")
+
+[node name="StaticBody" type="StaticBody2D" parent="Target"]
+position = Vector2(1690.89, 0)
+scale = Vector2(6.30928, 6.30928)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target/StaticBody"]
+position = Vector2(-268, 1)
+shape = SubResource("CircleShape2D_kn1uj")
+
+[node name="Target" type="Area2D" parent="Target"]
+scale = Vector2(6.30928, 6.30928)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target/Target"]
+shape = SubResource("CircleShape2D_2bxe7")
+
+[node name="Door" type="StaticBody2D" parent="."]
+position = Vector2(271, -5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Door"]
+position = Vector2(0, 26.5)
+scale = Vector2(1, 1.82813)
+texture = ExtResource("3_6abc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(-0.5, 27.5)
+shape = SubResource("RectangleShape2D_iq7li")
+
+[connection signal="body_entered" from="Target/Target" to="." method="_on_target_body_entered"]
+[connection signal="body_exited" from="Target/Target" to="." method="_on_target_body_exited"]

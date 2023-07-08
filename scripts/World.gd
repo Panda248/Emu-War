@@ -12,6 +12,7 @@ const BULLETZOOM = 1.2
 
 func _ready():
 	player = $Player
+	$Bullet.collision_layer = 0
 	currentForm = 0
 	zoom = PLAYERZOOM
 	targetZoom = zoom
@@ -21,16 +22,28 @@ func _process(delta):
 	$Camera2D.zoom = Vector2(zoom, zoom)
 	if Input.is_action_just_pressed("shoot"):
 		if currentForm == 0:
-			currentForm = 1
-			$Bullet.position = $Player/Gun/Point.global_position
-			player = $Bullet
-			$Bullet.visible = true
-			targetZoom = BULLETZOOM
+			
+			$Bullet.rotation = $Player/Gun.rotation
+			changeToBullet()
 		else:
-			currentForm = 0
-			player = $Player
-			$Bullet.visible = false
-			targetZoom = PLAYERZOOM
+			changeToPlayer()
+
+func changeToBullet():
+	currentForm = 1
+	$Bullet.position = $Player/Gun/Point.global_position
+	player = $Bullet
+	$Bullet.visible = true
+	$Bullet/CollisionShape2D.disabled = false
+	$Bullet.collision_layer = 1
+	targetZoom = BULLETZOOM
+
+func changeToPlayer():
+	currentForm = 0
+	player = $Player
+	$Bullet.visible = false
+	$Bullet/CollisionShape2D.disabled = true
+	$Bullet.collision_layer = 0
+	targetZoom = PLAYERZOOM
 
 func slowZoom():
 	if abs(targetZoom - zoom) > 0.1:
