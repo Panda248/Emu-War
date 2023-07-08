@@ -33,7 +33,7 @@ func _process(delta):
 			targetZoom = PLAYERZOOM
 
 func slowZoom():
-	if zoom != targetZoom:
+	if abs(targetZoom - zoom) > 0.1:
 		if targetZoom-zoom > 0:
 			zoom+=0.01
 		else:
