@@ -2,15 +2,21 @@ extends CharacterBody2D
 class_name Bullet
 
 const MOVE_SPEED = 10
-
+const MAX_ROTATION_DEGREES = 2
+const MOUSE_DEAD_ZONE_RADIUS = 100
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	var mousePosition = get_viewport().get_mouse_position()
-	rotate(get_angle_to(mousePosition))
-	#move_and_collide()
+	if(global_position.distance_to(get_global_mouse_position()) > MOUSE_DEAD_ZONE_RADIUS):
+		var direction = global_position.direction_to(get_global_mouse_position())
+		var angleTo = direction.angle()
+		var maxRotation = deg_to_rad(MAX_ROTATION_DEGREES)
+		angleTo = lerp_angle(global_rotation, angleTo, 1.0)
+		angleTo = clamp(angleTo, global_rotation - maxRotation, global_rotation + maxRotation)
+		set_global_rotation(angleTo)
+	move_and_collide(Vector2.RIGHT.rotated(rotation)*MOVE_SPEED)
 
 func _process(delta):
 	pass
