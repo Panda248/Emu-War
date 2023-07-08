@@ -8,5 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var mousePosition = get_viewport().get_mouse_position()
-	rotate(get_angle_to(mousePosition))
+	var angleTo = global_position.direction_to(get_global_mouse_position()).angle()
+	angleTo = lerp_angle(global_rotation, angleTo, 1.0)
+	angleTo = clamp(angleTo, global_rotation - 1, global_rotation + 1)
+	set_global_rotation(angleTo)

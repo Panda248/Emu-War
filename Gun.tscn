@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://4g8nn211roe6"]
+[gd_scene load_steps=3 format=3 uid="uid://cw42538qe4av1"]
 
 [ext_resource type="Script" path="res://Gun.gd" id="1_61b7x"]
 [ext_resource type="Texture2D" uid="uid://ddvbrgxpemgnt" path="res://m9.png" id="2_oyyue"]
@@ -8,3 +8,6 @@ script = ExtResource("1_61b7x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_oyyue")
+
+[node name="Point" type="Marker2D" parent="."]
+position = Vector2(75, -57)
