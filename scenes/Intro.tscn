@@ -1,19 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv3k6b620sf2k"]
+[gd_scene load_steps=8 format=3 uid="uid://dv3k6b620sf2k"]
 
-[ext_resource type="Script" path="res://scenes/CutsceneManager.gd" id="1_75wk2"]
+[ext_resource type="Script" path="res://scripts/CutsceneManager.gd" id="1_wdrip"]
+[ext_resource type="Script" path="res://scenes/Cutscene.gd" id="2_t0swv"]
 [ext_resource type="Texture2D" uid="uid://bb1dht26pk8i1" path="res://assets/cutscenes/park.png" id="2_vcba8"]
+[ext_resource type="Texture2D" uid="uid://djn2a2oi5tyvm" path="res://assets/emu1.png" id="3_dn4tk"]
 [ext_resource type="Texture2D" uid="uid://dqk1gwnr5vms0" path="res://assets/cutscenes/gouge.png" id="3_y1y64"]
 
-[node name="Intro" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_75wk2")
+[sub_resource type="Animation" id="Animation_73318"]
+resource_name = "anim1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_54ciu"]
+_data = {
+"animation": SubResource("Animation_73318")
+}
+
+[node name="Intro" type="CanvasLayer"]
+script = ExtResource("1_wdrip")
 
 [node name="Scenes" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -22,14 +39,29 @@ offset_bottom = 40.0
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_t0swv")
 
 [node name="Background" type="TextureRect" parent="Scenes/Scene1"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_vcba8")
 
+[node name="Emu" type="TextureRect" parent="Scenes/Scene1"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 345.0
+offset_right = 873.0
+offset_bottom = 916.0
+texture = ExtResource("3_dn4tk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene1/Emu"]
+libraries = {
+"": SubResource("AnimationLibrary_54ciu")
+}
+
 [node name="Scene2" type="Control" parent="Scenes"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -41,6 +73,7 @@ offset_bottom = 40.0
 texture = ExtResource("3_y1y64")
 
 [node name="Scene3" type="Control" parent="Scenes"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -51,6 +84,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Scene4" type="Control" parent="Scenes"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
