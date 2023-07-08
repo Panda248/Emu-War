@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://duw6asbmact82"]
+[gd_scene load_steps=5 format=3 uid="uid://8ytecw1tw4y"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_758kj"]
 [ext_resource type="Texture2D" uid="uid://br8usuiebpt3w" path="res://New Piskel.png" id="2_o44ok"]
-[ext_resource type="PackedScene" uid="uid://cw42538qe4av1" path="res://Gun.tscn" id="3_uk1fm"]
+[ext_resource type="PackedScene" uid="uid://4g8nn211roe6" path="res://Gun.tscn" id="3_uk1fm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xale8"]
 radius = 20.0
