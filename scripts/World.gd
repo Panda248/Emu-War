@@ -12,6 +12,7 @@ const BULLETZOOM = 1.2
 
 func _ready():
 	player = $Player
+	$Bullet.collision_layer = 0
 	currentForm = 0
 	zoom = PLAYERZOOM
 	targetZoom = zoom
@@ -30,6 +31,7 @@ func _process(delta):
 			currentForm = 0
 			player = $Player
 			$Bullet.visible = false
+			$Bullet.collision_layer = 0
 			targetZoom = PLAYERZOOM
 
 func slowZoom():
