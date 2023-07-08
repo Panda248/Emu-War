@@ -8,5 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	global_position = (get_parent().player.global_position + get_viewport().get_mouse_position())/2
+	var offset = (get_global_mouse_position()-get_parent().player.global_position)*0.3
+	global_position = get_parent().player.global_position + offset
+
 	pass
