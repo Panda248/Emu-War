@@ -5,7 +5,6 @@ class_name Gun
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var angleTo = global_position.direction_to(get_global_mouse_position()).angle()

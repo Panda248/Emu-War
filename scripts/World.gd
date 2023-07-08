@@ -7,7 +7,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
-		$Bullet.position.x = $Player/Gun/Point.position.x
-		$Bullet.position.y = $Player/Gun/Point.position.y
+		$Bullet.position.x = $Player/Gun/Point.global_position.x
+		$Bullet.position.y = $Player/Gun/Point.global_position.y
 		player = $Bullet
 		player.visible = true

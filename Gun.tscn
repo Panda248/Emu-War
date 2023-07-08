@@ -10,4 +10,4 @@ script = ExtResource("1_61b7x")
 texture = ExtResource("2_oyyue")
 
 [node name="Point" type="Marker2D" parent="."]
-position = Vector2(75, -57)
+position = Vector2(115, -59)
