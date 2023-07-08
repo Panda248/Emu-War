@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://clpweojj78lm1"]
+
+[ext_resource type="FontFile" uid="uid://cf1rwi1s57eln" path="res://assets/fonts/rowdies/Rowdies-Regular.ttf" id="1_snu3o"]
+
+[resource]
+default_font = ExtResource("1_snu3o")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 50

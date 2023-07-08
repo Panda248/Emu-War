@@ -1,10 +1,56 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv3k6b620sf2k"]
+[gd_scene load_steps=29 format=3 uid="uid://dv3k6b620sf2k"]
 
 [ext_resource type="Script" path="res://scripts/CutsceneManager.gd" id="1_wdrip"]
-[ext_resource type="Script" path="res://scenes/Cutscene.gd" id="2_t0swv"]
+[ext_resource type="Script" path="res://scripts/Cutscene.gd" id="2_483rd"]
 [ext_resource type="Texture2D" uid="uid://bb1dht26pk8i1" path="res://assets/cutscenes/park.png" id="2_vcba8"]
 [ext_resource type="Texture2D" uid="uid://djn2a2oi5tyvm" path="res://assets/emu1.png" id="3_dn4tk"]
 [ext_resource type="Texture2D" uid="uid://dqk1gwnr5vms0" path="res://assets/cutscenes/gouge.png" id="3_y1y64"]
+[ext_resource type="Theme" uid="uid://clpweojj78lm1" path="res://assets/themes/CutsceneText.tres" id="4_bn657"]
+[ext_resource type="Shader" path="res://assets/shaders/shakyText.gdshader" id="7_p85bi"]
+[ext_resource type="Theme" uid="uid://u4ifio3snxpn" path="res://assets/themes/scary.tres" id="8_efwnp"]
+[ext_resource type="Texture2D" uid="uid://chrinva7cpwe8" path="res://assets/cutscenes/armed.png" id="9_25vtw"]
+[ext_resource type="Texture2D" uid="uid://cxl0ci4isoi83" path="res://assets/cutscenes/anger.png" id="10_x065h"]
+[ext_resource type="Texture2D" uid="uid://drb1ef5ji8cnl" path="res://assets/cutscenes/anger_moving.png" id="11_td4pf"]
+
+[sub_resource type="Animation" id="Animation_suafw"]
+resource_name = "action"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Control/Text1:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1pqo0"]
+_data = {
+"action": SubResource("Animation_suafw")
+}
+
+[sub_resource type="Animation" id="Animation_svv3k"]
+resource_name = "action"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Control3/Text1:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r2gj5"]
+_data = {
+"action": SubResource("Animation_svv3k")
+}
 
 [sub_resource type="Animation" id="Animation_73318"]
 resource_name = "anim1"
@@ -20,10 +66,142 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Emu2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_54ciu"]
 _data = {
-"animation": SubResource("Animation_73318")
+"action": SubResource("Animation_73318")
+}
+
+[sub_resource type="Animation" id="Animation_vnex5"]
+resource_name = "action"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w1bln"]
+_data = {
+"action": SubResource("Animation_vnex5")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqxbm"]
+shader = ExtResource("7_p85bi")
+shader_parameter/height = 2.0
+shader_parameter/frequency = 20.0
+shader_parameter/speed = 50.0
+
+[sub_resource type="Animation" id="Animation_g3kly"]
+resource_name = "action"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pp3g7"]
+_data = {
+"action": SubResource("Animation_g3kly")
+}
+
+[sub_resource type="Animation" id="Animation_bjgtg"]
+resource_name = "action"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6ce7"]
+_data = {
+"action": SubResource("Animation_bjgtg")
+}
+
+[sub_resource type="Animation" id="Animation_8d8kg"]
+resource_name = "action"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scenes/Scene5/Background/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g0mbd"]
+_data = {
+"action": SubResource("Animation_8d8kg")
+}
+
+[sub_resource type="Animation" id="Animation_316pw"]
+resource_name = "action"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1385, 1104), Vector2(1335, 578)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e731j"]
+_data = {
+"action": SubResource("Animation_316pw")
 }
 
 [node name="Intro" type="CanvasLayer"]
@@ -39,7 +217,7 @@ offset_bottom = 40.0
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_t0swv")
+script = ExtResource("2_483rd")
 
 [node name="Background" type="TextureRect" parent="Scenes/Scene1"]
 layout_mode = 0
@@ -47,7 +225,75 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_vcba8")
 
-[node name="Emu" type="TextureRect" parent="Scenes/Scene1"]
+[node name="Control" type="Control" parent="Scenes/Scene1"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="text" type="AnimationPlayer" parent="Scenes/Scene1/Control"]
+root_node = NodePath("../../Control2/emuAppearance")
+libraries = {
+"": SubResource("AnimationLibrary_1pqo0")
+}
+
+[node name="Text1" type="Label" parent="Scenes/Scene1/Control"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 229.0
+offset_right = 600.0
+offset_bottom = 382.0
+theme = ExtResource("4_bn657")
+text = "This is Bob."
+visible_characters = 0
+visible_ratio = 0.01
+
+[node name="Control3" type="Control" parent="Scenes/Scene1"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="text" type="AnimationPlayer" parent="Scenes/Scene1/Control3"]
+root_node = NodePath("../../Control2/emuAppearance")
+libraries = {
+"": SubResource("AnimationLibrary_r2gj5")
+}
+
+[node name="Text1" type="Label" parent="Scenes/Scene1/Control3"]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 362.0
+offset_right = 1832.0
+offset_bottom = 428.0
+theme = ExtResource("4_bn657")
+text = "Bob was relaxing at the park until..."
+visible_characters = 0
+visible_ratio = 0.01
+
+[node name="Control2" type="Control" parent="Scenes/Scene1"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="emuAppearance" type="AnimationPlayer" parent="Scenes/Scene1/Control2"]
+root_node = NodePath("../Emu")
+libraries = {
+"": SubResource("AnimationLibrary_54ciu")
+}
+
+[node name="Text2" type="Label" parent="Scenes/Scene1/Control2"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 585.0
+offset_right = 681.0
+offset_bottom = 651.0
+theme = ExtResource("4_bn657")
+text = "Two Emus showed up..."
+visible_characters = 0
+visible_ratio = 0.01
+
+[node name="Emu" type="TextureRect" parent="Scenes/Scene1/Control2"]
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
 layout_mode = 0
 offset_left = 233.0
 offset_top = 345.0
@@ -55,16 +301,22 @@ offset_right = 873.0
 offset_bottom = 916.0
 texture = ExtResource("3_dn4tk")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene1/Emu"]
-libraries = {
-"": SubResource("AnimationLibrary_54ciu")
-}
+[node name="Emu2" type="TextureRect" parent="Scenes/Scene1/Control2"]
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 126.0
+offset_top = 345.0
+offset_right = 766.0
+offset_bottom = 916.0
+texture = ExtResource("3_dn4tk")
 
 [node name="Scene2" type="Control" parent="Scenes"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_483rd")
 
 [node name="Background" type="TextureRect" parent="Scenes/Scene2"]
 layout_mode = 0
@@ -72,24 +324,152 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_y1y64")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene2/Background"]
+libraries = {
+"": SubResource("AnimationLibrary_w1bln")
+}
+
+[node name="Label" type="Label" parent="Scenes/Scene2/Background"]
+material = SubResource("ShaderMaterial_qqxbm")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -473.0
+offset_top = 147.0
+offset_right = 473.0
+offset_bottom = 268.0
+grow_horizontal = 2
+theme = ExtResource("8_efwnp")
+theme_override_font_sizes/font_size = 100
+text = " and GOUGED HIS EYES OUT"
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.01
+
 [node name="Scene3" type="Control" parent="Scenes"]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_483rd")
 
-[node name="Background" type="TextureRect" parent="Scenes/Scene3"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" type="ColorRect" parent="Scenes/Scene3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene3/Background"]
+libraries = {
+"": SubResource("AnimationLibrary_pp3g7")
+}
+
+[node name="Label" type="Label" parent="Scenes/Scene3/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -686.5
+offset_top = -64.0
+offset_right = 686.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_bn657")
+theme_override_font_sizes/font_size = 100
+text = "One emergency room later..."
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.01
 
 [node name="Scene4" type="Control" parent="Scenes"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_483rd")
 
 [node name="Background" type="TextureRect" parent="Scenes/Scene4"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("9_25vtw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene4/Background"]
+libraries = {
+"": SubResource("AnimationLibrary_q6ce7")
+}
+
+[node name="Label" type="Label" parent="Scenes/Scene4/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 26.942
+offset_left = -205.0
+offset_top = 123.0
+offset_right = 247.0
+offset_bottom = -888.68
+grow_horizontal = 2
+theme = ExtResource("4_bn657")
+text = "Those darn emus..."
+visible_characters = 0
+visible_ratio = 0.01
+
+[node name="Scene5" type="Control" parent="Scenes"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_483rd")
+
+[node name="Background" type="TextureRect" parent="Scenes/Scene5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_x065h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene5/Background"]
+root_node = NodePath("../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_g0mbd")
+}
+
+[node name="Label" type="Label" parent="Scenes/Scene5/Background"]
+offset_left = 1187.0
+offset_top = 282.0
+offset_right = 1663.0
+offset_bottom = 348.0
+theme = ExtResource("4_bn657")
+text = "They're gonna pay!"
+visible_characters = 0
+visible_ratio = 0.01
+
+[node name="Control2" type="Control" parent="Scenes/Scene5"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene5/Control2"]
+libraries = {
+"": SubResource("AnimationLibrary_e731j")
+}
+
+[node name="TextureRect" type="TextureRect" parent="Scenes/Scene5/Control2"]
+layout_mode = 0
+offset_left = 1335.0
+offset_top = 578.0
+offset_right = 1835.0
+offset_bottom = 1078.0
+texture = ExtResource("11_td4pf")
