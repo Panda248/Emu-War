@@ -36,7 +36,7 @@ scale = Vector2(6.30928, 6.30928)
 shape = SubResource("CircleShape2D_2bxe7")
 
 [node name="Door" type="StaticBody2D" parent="."]
-position = Vector2(271, -5)
+position = Vector2(283, -15)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]

@@ -3,6 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Door/CollisionShape2D.disabled = false
+	$Door.collision_layer = 1
 	pass # Replace with function body.
 
 
