@@ -15,6 +15,7 @@ func _on_target_body_entered(body):
 	if body != $Target/StaticBody:
 		$Door.visible = false
 		$Door/CollisionShape2D.disabled = true
+		$Door.collision_layer = 0
 
 func _on_target_body_exited(body):
 	if body != $Target/StaticBody:
