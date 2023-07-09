@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://06ksjv67pc4p"]
+[gd_scene load_steps=7 format=3 uid="uid://b8d1wkfnelr10"]
 
 [ext_resource type="Script" path="res://LinkedDoor.gd" id="1_oxaor"]
 [ext_resource type="Texture2D" uid="uid://ectf4i5twk5f" path="res://istockphoto-1370315503-612x612.jpg" id="2_6u7gc"]
@@ -15,8 +15,6 @@ size = Vector2(63, 117)
 
 [node name="LinkedDoor" type="Node2D"]
 script = ExtResource("1_oxaor")
-buttonUnpressed = ExtResource("2_6u7gc")
-buttonPressed = ExtResource("2_6u7gc")
 
 [node name="Target" type="Sprite2D" parent="."]
 position = Vector2(-268, 0)
