@@ -63,4 +63,5 @@ func kill(body : Bullet):
 
 func _on_timer_timeout():
 	dead = true
+	queue_free()
 	pass # Replace with function body.

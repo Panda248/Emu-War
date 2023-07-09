@@ -76,6 +76,5 @@ func emus_dead() -> bool:
 func _on_area_2d_body_entered(body):
 	if body is Player:
 		GlobalVar.world = load("res://scenes/World.tscn")
-		
 		get_tree().change_scene_to_packed(GlobalVar.world)
 	pass # Replace with function body.
