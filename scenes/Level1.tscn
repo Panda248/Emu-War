@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0v1mb3a6vtoe"]
 
-[ext_resource type="Script" path="res://scenes/Level1.gd" id="1_ietwc"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_sv0ni"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_x4nc0"]
 [ext_resource type="TileSet" uid="uid://b1c8hml47i26w" path="res://scenes/TileSet.tres" id="3_qdpbx"]
 [ext_resource type="PackedScene" uid="uid://dqsy3urhnyylg" path="res://scenes/Bullet.tscn" id="4_5bojm"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c1fvcopl8oanq" path="res://scenes/Emu.tscn" id="7_64lkt"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_ietwc")
+script = ExtResource("1_sv0ni")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -13411.0

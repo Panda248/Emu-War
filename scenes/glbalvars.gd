@@ -1,5 +1,4 @@
 extends Node
 
-var world : PackedScene
-# Called when the node enters the scene tree for the first time.
+@onready var world = preload("res://scenes/World.tscn")
 

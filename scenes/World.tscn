@@ -61,7 +61,7 @@ size = Vector2(8047.5, 31)
 size = Vector2(363, 791)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6ty5"]
-size = Vector2(307, 692)
+size = Vector2(365, 692)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nxnu0")
@@ -175,29 +175,29 @@ offset_right = 7874.29
 offset_bottom = 731.428
 texture = ExtResource("2_1odfo")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Level1" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1"]
 position = Vector2(2565, 1247)
 scale = Vector2(-18.926, -32.3871)
 shape = SubResource("RectangleShape2D_sp5vb")
 
-[node name="Area2D3" type="Area2D" parent="."]
+[node name="Level2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2"]
 position = Vector2(3981.5, 1316.5)
 shape = SubResource("RectangleShape2D_b057n")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Level3" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(5442.5, 1281)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3"]
+position = Vector2(5413.5, 1281)
 shape = SubResource("RectangleShape2D_e6ty5")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="Area2D3" to="." method="_on_area_2d_3_area_entered"]
-[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="body_entered" from="Level1" to="." method="_on_level_1_body_entered"]
+[connection signal="body_entered" from="Level2" to="." method="_on_level_2_body_entered"]
+[connection signal="body_entered" from="Level3" to="." method="_on_level_3_body_entered"]
 
 [editable path="Player"]
