@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8ytecw1tw4y"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_758kj"]
-[ext_resource type="Texture2D" uid="uid://br8usuiebpt3w" path="res://New Piskel.png" id="2_o44ok"]
+[ext_resource type="SpriteFrames" uid="uid://b8coceopujbth" path="res://assets/animations/player.tres" id="2_23hk2"]
 [ext_resource type="PackedScene" uid="uid://4g8nn211roe6" path="res://Gun.tscn" id="3_uk1fm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xale8"]
@@ -12,9 +12,10 @@ height = 120.0
 z_index = 1
 script = ExtResource("1_758kj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
-texture = ExtResource("2_o44ok")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_23hk2")
+animation = &"chill"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
