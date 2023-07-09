@@ -7,6 +7,7 @@ const ROTATE_SPEED = 0.5
 const DEPTH_MIN = 20
 const DEPTH_MAX = 100
 
+var prevCam 
 
 var dead = false
 # Called when the node enters the scene tree for the first time.
@@ -39,12 +40,15 @@ func _on_head_body_entered(body):
 func _on_leg_body_entered(body):
 	print("leg")
 	if(body is Bullet):
+		
 		kill(body)
 
 	pass # Replace with function body.
 
 
 func kill(body : Bullet):
+	prevCam = get_viewport().get_camera_2d()
+
 	body.hide()
 	$Marker2D.global_position = body.global_position + (Vector2.RIGHT.rotated(body.rotation)*randf_range(DEPTH_MIN, DEPTH_MAX))
 	$Camera2D.global_position = $Marker2D.global_position
@@ -54,14 +58,19 @@ func kill(body : Bullet):
 	
 	body.processing = false
 	
+	
 	$GPUParticles2D.set_deferred("emitting", true)
 	$GPUParticles2D2.set_deferred("emitting", true)
 	$GPUParticles2D3.set_deferred("emitting", true)
+	
 	$Camera2D.make_current()
 	$Timer.start()
 
 
 func _on_timer_timeout():
+	prevCam.make_current()
+	get_owner().changeToPlayer()
 	dead = true
 	queue_free()
-	pass # Replace with function body.
+	
+	pass # Replae with function body.

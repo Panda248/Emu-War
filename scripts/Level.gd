@@ -10,6 +10,8 @@ var zoom
 
 var emus : Array
 
+
+
 var targetZoom
 const PLAYERZOOM = 0.6
 const BULLETZOOM = 1.2
