@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkhakbdtsh7ok"]
+
+[ext_resource type="Texture2D" uid="uid://ectf4i5twk5f" path="res://istockphoto-1370315503-612x612.jpg" id="1_eux6f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61n5v"]
+radius = 14.254
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffme0"]
+radius = 21.207
+
+[node name="FakeTarget" type="Node2D"]
+
+[node name="Target" type="Sprite2D" parent="."]
+position = Vector2(-268, 0)
+scale = Vector2(0.158497, 0.158497)
+texture = ExtResource("1_eux6f")
+
+[node name="StaticBody" type="StaticBody2D" parent="Target"]
+position = Vector2(1690.89, 0)
+scale = Vector2(6.30928, 6.30928)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target/StaticBody"]
+position = Vector2(-268, 1)
+shape = SubResource("CircleShape2D_61n5v")
+
+[node name="Target" type="Area2D" parent="Target"]
+scale = Vector2(6.30928, 6.30928)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target/Target"]
+shape = SubResource("CircleShape2D_ffme0")
