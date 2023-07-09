@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_8rf28"]
 [ext_resource type="FontFile" uid="uid://dtw50ybu8w0cx" path="res://assets/fonts/rowdies/Rowdies-Light.ttf" id="1_en3t0"]
-[ext_resource type="Texture2D" uid="uid://cxl0ci4isoi83" path="res://assets/cutscenes/anger.png" id="2_kwxt1"]
+[ext_resource type="Texture2D" uid="uid://crjtnl7svlf18" path="res://assets/title.png" id="2_dtyw5"]
 
 [node name="Start" type="CanvasLayer"]
 script = ExtResource("1_8rf28")
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_kwxt1")
+texture = ExtResource("2_dtyw5")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -43,10 +43,12 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_en3t0")
 theme_override_font_sizes/font_size = 90
-text = "EMU WAR"
+text = "the GREAT
+EMU WAR"
 horizontal_alignment = 2
 
 [node name="StartButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
@@ -59,6 +61,7 @@ flat = true
 alignment = 2
 
 [node name="SettingButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
@@ -72,6 +75,7 @@ alignment = 2
 icon_alignment = 2
 
 [node name="LeaveButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.938411, 0.624347, 0.924635, 1)
