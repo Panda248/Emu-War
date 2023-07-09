@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://blfaebh4njttp" path="res://marbleset.png" id="3_7whw0"]
 [ext_resource type="Texture2D" uid="uid://bfw1ri78yricv" path="res://assets/dirtset.png" id="3_vbnae"]
 [ext_resource type="PackedScene" uid="uid://dqsy3urhnyylg" path="res://scenes/Bullet.tscn" id="4_db68m"]
-[ext_resource type="Texture2D" uid="uid://bvxaes1amulkk" path="res://assets/grassset.png" id="5_m5oxn"]
+[ext_resource type="Texture2D" uid="uid://b1vqrbsf5fdrq" path="res://assets/grassset.png" id="5_m5oxn"]
 [ext_resource type="PackedScene" uid="uid://8ytecw1tw4y" path="res://Player.tscn" id="5_u0dri"]
 [ext_resource type="PackedScene" uid="uid://b8d1wkfnelr10" path="res://LinkedDoor.tscn" id="6_aykwx"]
-[ext_resource type="Texture2D" uid="uid://81f84usn7dqe" path="res://assets/altgrassset2.png" id="6_eexsf"]
-[ext_resource type="Texture2D" uid="uid://dtpip44jmocdr" path="res://assets/altgrassset.png" id="7_vg0wn"]
+[ext_resource type="Texture2D" uid="uid://crya4ri5a1wsi" path="res://assets/altgrassset2.png" id="6_eexsf"]
+[ext_resource type="Texture2D" uid="uid://rh3oung76ng8" path="res://assets/altgrassset.png" id="7_vg0wn"]
 [ext_resource type="Texture2D" uid="uid://dm1g1b586oald" path="res://assets/buttonhome.png" id="8_5nb7y"]
-[ext_resource type="Texture2D" uid="uid://dh2spk8dqo518" path="res://assets/cobbleset.png" id="8_sfq54"]
+[ext_resource type="Texture2D" uid="uid://cu8ymd28mfbe5" path="res://assets/cobbleset.png" id="8_sfq54"]
 [ext_resource type="Texture2D" uid="uid://dpb734pjlpvqu" path="res://assets/buttonhomepressed.png" id="9_cr4sf"]
 [ext_resource type="PackedScene" uid="uid://c1fvcopl8oanq" path="res://scenes/Emu.tscn" id="10_ijxaw"]
 
@@ -1861,7 +1861,7 @@ buttonUnpressed = ExtResource("8_5nb7y")
 buttonPressed = ExtResource("9_cr4sf")
 
 [node name="Target" parent="LinkedDoor" index="0"]
-position = Vector2(744, -28)
+position = Vector2(746, -691)
 scale = Vector2(0.368, 0.456)
 texture = ExtResource("8_5nb7y")
 

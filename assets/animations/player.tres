@@ -11,6 +11,17 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_4ex01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8ydmm")
+}],
+"loop": true,
+"name": &"Chill",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_karch")
 }, {
 "duration": 1.0,
@@ -25,15 +36,4 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_4ex01")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_8ydmm")
-}],
-"loop": true,
-"name": &"chill",
-"speed": 2.0
 }]

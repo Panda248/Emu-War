@@ -1,11 +1,11 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://if04sgqncu8b"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://b1c8hml47i26w"]
 
 [ext_resource type="Texture2D" uid="uid://bfw1ri78yricv" path="res://assets/dirtset.png" id="1_m2hiy"]
 [ext_resource type="Texture2D" uid="uid://blfaebh4njttp" path="res://marbleset.png" id="2_ryqxc"]
-[ext_resource type="Texture2D" uid="uid://bvxaes1amulkk" path="res://assets/grassset.png" id="3_uvkus"]
-[ext_resource type="Texture2D" uid="uid://dh2spk8dqo518" path="res://assets/cobbleset.png" id="4_jmfol"]
-[ext_resource type="Texture2D" uid="uid://dtpip44jmocdr" path="res://assets/altgrassset.png" id="5_iil2v"]
-[ext_resource type="Texture2D" uid="uid://81f84usn7dqe" path="res://assets/altgrassset2.png" id="6_mt8hu"]
+[ext_resource type="Texture2D" uid="uid://b1vqrbsf5fdrq" path="res://assets/grassset.png" id="3_uvkus"]
+[ext_resource type="Texture2D" uid="uid://cu8ymd28mfbe5" path="res://assets/cobbleset.png" id="4_jmfol"]
+[ext_resource type="Texture2D" uid="uid://rh3oung76ng8" path="res://assets/altgrassset.png" id="5_iil2v"]
+[ext_resource type="Texture2D" uid="uid://crya4ri5a1wsi" path="res://assets/altgrassset2.png" id="6_mt8hu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fqo51"]
 resource_name = "Dirt"

@@ -13,9 +13,10 @@ z_index = 1
 script = ExtResource("1_758kj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11, 0)
+scale = Vector2(0.53, 0.53)
 sprite_frames = ExtResource("2_23hk2")
-animation = &"chill"
-frame = 1
+animation = &"Chill"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)

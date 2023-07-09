@@ -24,9 +24,15 @@ func _physics_process(delta):
 		
 		var direction = Input.get_axis("move_left", "move_right")
 		if direction:
+			
 			velocity.x = direction * SPEED
 		else:
+			
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+		if velocity.x:
+			$AnimatedSprite2D.play("Walk")
+		else:
+			$AnimatedSprite2D.play("Chill")
 			
 		move_and_slide()
 	if get_global_mouse_position().x > global_position.x:
