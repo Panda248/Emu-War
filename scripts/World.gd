@@ -28,6 +28,7 @@ func _process(delta):
 			changeToPlayer()
 
 func changeToBullet():
+	player.controlling = false
 	currentForm = 1
 	$Bullet.position = $Player/Gun/Point.global_position
 	player = $Bullet
@@ -39,6 +40,7 @@ func changeToBullet():
 func changeToPlayer():
 	currentForm = 0
 	player = $Player
+	player.controlling = true
 	$Bullet.visible = false
 	$Bullet/CollisionShape2D.disabled = true
 	$Bullet.collision_layer = 0

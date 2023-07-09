@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1fvcopl8oanq"]
+
+[ext_resource type="Texture2D" uid="uid://djn2a2oi5tyvm" path="res://assets/emu1.png" id="1_3c8gu"]
+[ext_resource type="Script" path="res://Emu.gd" id="2_0ad2e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bqek"]
+radius = 82.0
+height = 386.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_add52"]
+radius = 31.0
+height = 102.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rr1tn"]
+radius = 30.4138
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc701"]
+size = Vector2(65, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20wol"]
+size = Vector2(136, 57)
+
+[node name="Emu" type="Sprite2D"]
+texture = ExtResource("1_3c8gu")
+script = ExtResource("2_0ad2e")
+
+[node name="Body" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(-18, -12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1bqek")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body"]
+position = Vector2(168, -60)
+shape = SubResource("CapsuleShape2D_add52")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Body"]
+position = Vector2(132, -112)
+shape = SubResource("CapsuleShape2D_add52")
+
+[node name="Head" type="Area2D" parent="."]
+position = Vector2(124, -189)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Head"]
+shape = SubResource("CircleShape2D_rr1tn")
+debug_color = Color(0.6, 0.541176, 0, 0.419608)
+
+[node name="Leg" type="Area2D" parent="."]
+position = Vector2(-16, 210)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Leg"]
+position = Vector2(-20.5, -61)
+shape = SubResource("RectangleShape2D_wc701")
+debug_color = Color(0.113725, 0.619608, 0.541176, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Leg"]
+shape = SubResource("RectangleShape2D_20wol")
+debug_color = Color(0.113725, 0.619608, 0.541176, 0.419608)
+
+[connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
+[connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]
+[connection signal="body_entered" from="Leg" to="." method="_on_leg_body_entered"]

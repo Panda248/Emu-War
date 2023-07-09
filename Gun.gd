@@ -11,7 +11,9 @@ func _process(_delta):
 	angleTo = lerp_angle(global_rotation, angleTo, 1.0)
 	angleTo = clamp(angleTo, global_rotation - 1, global_rotation + 1)
 	set_global_rotation(angleTo)
-	if angleTo > -PI/2 and angleTo < PI/2:
-		get_node("Sprite2D").set_flip_v(false)
-	else: 
-		get_node("Sprite2D").set_flip_v(true)
+	#if angleTo > -PI/2 and angleTo < PI/2:
+		#get_node("Sprite2D").set_flip_v(false)
+
+	#else: 
+		#get_node("Sprite2D").set_flip_v(true)
+

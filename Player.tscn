@@ -9,20 +9,23 @@ radius = 20.0
 height = 120.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_758kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
 texture = ExtResource("2_o44ok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
+scale = Vector2(4, 4)
 shape = SubResource("CapsuleShape2D_xale8")
 
 [node name="Gun" parent="." instance=ExtResource("3_uk1fm")]
-position = Vector2(21, 5)
+position = Vector2(77, -75)
 
 [node name="LeftHand" type="Marker2D" parent="."]
-position = Vector2(-17, 2)
+position = Vector2(-56, 3)
 
 [node name="RightHand" type="Marker2D" parent="."]
-position = Vector2(20, 8)
+position = Vector2(69, 3)

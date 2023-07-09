@@ -1,10 +1,12 @@
 extends Node2D
 
-
+@export var buttonUnpressed : Texture
+@export var buttonPressed : Texture
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Door/CollisionShape2D.disabled = false
-	$Door.collision_layer = 1
+	$Door.collision_layer = 2
+	$Target.texture = buttonUnpressed
 	pass # Replace with function body.
 
 
@@ -18,6 +20,7 @@ func _on_target_body_entered(body):
 		$Door.visible = false
 		$Door/CollisionShape2D.disabled = true
 		$Door.collision_layer = 0
+		$Target.texture = buttonPressed
 
 func _on_target_body_exited(body):
 	if body != $Target/StaticBody:
