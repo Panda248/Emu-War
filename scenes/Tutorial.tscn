@@ -1838,6 +1838,7 @@ offset_bottom = 1761.0
 color = Color(0, 0, 0, 1)
 
 [node name="Ground" type="TileMap" parent="."]
+visible = false
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_r03ug")
 cell_quadrant_size = 32

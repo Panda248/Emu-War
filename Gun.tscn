@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://4g8nn211roe6"]
 
 [ext_resource type="Script" path="res://Gun.gd" id="1_61b7x"]
-[ext_resource type="Texture2D" uid="uid://3f2pmcvngwt6" path="res://assets/gun.png" id="2_a80c6"]
+[ext_resource type="SpriteFrames" uid="uid://dyq80x8gf0qo6" path="res://assets/animations/shoot/shoot.tres" id="2_ffkjx"]
 
 [node name="Gun" type="Node2D"]
 light_mask = 3
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_61b7x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(70, -26.6667)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_a80c6")
+sprite_frames = ExtResource("2_ffkjx")
 
 [node name="Point" type="Marker2D" parent="."]
 position = Vector2(320, -76.6666)
