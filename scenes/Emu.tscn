@@ -1,15 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1fvcopl8oanq"]
+[gd_scene load_steps=19 format=3 uid="uid://c1fvcopl8oanq"]
 
 [ext_resource type="Texture2D" uid="uid://djn2a2oi5tyvm" path="res://assets/emu1.png" id="1_3c8gu"]
 [ext_resource type="Script" path="res://Emu.gd" id="2_0ad2e"]
+[ext_resource type="Texture2D" uid="uid://bsl2w5yvjo1is" path="res://assets/particles/bloodparticel1.png" id="3_aq2it"]
+[ext_resource type="Texture2D" uid="uid://btbn8yj64mv67" path="res://assets/particles/bloodparticl3.png" id="4_v5ilu"]
+[ext_resource type="Texture2D" uid="uid://5lwau8eb2vqj" path="res://assets/particles/bloodparticle2.png" id="5_cdj2q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bqek"]
-radius = 82.0
-height = 386.0
+radius = 62.0
+height = 332.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_add52"]
 radius = 31.0
 height = 102.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hbipr"]
+radius = 68.0
+height = 226.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rr1tn"]
 radius = 30.4138
@@ -20,14 +27,58 @@ size = Vector2(65, 172)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20wol"]
 size = Vector2(136, 57)
 
+[sub_resource type="Animation" id="Animation_57au4"]
+resource_name = "bodyshot"
+
+[sub_resource type="Animation" id="Animation_adx3g"]
+resource_name = "headshot"
+
+[sub_resource type="Animation" id="Animation_yjklj"]
+resource_name = "legshot"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wy4yp"]
+_data = {
+"bodyshot": SubResource("Animation_57au4"),
+"headshot": SubResource("Animation_adx3g"),
+"legshot": SubResource("Animation_yjklj")
+}
+
+[sub_resource type="Gradient" id="Gradient_vqimq"]
+offsets = PackedFloat32Array(0, 0.807407, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.888889, 0.888889, 0.888889, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_or07j"]
+gradient = SubResource("Gradient_vqimq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8xxx6"]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 21.21
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = -100.0
+initial_velocity_max = 100.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -35.79
+linear_accel_max = 37.89
+scale_min = 0.2
+color_ramp = SubResource("GradientTexture1D_or07j")
+hue_variation_min = 0.07
+hue_variation_max = 0.15
+
 [node name="Emu" type="Sprite2D"]
 texture = ExtResource("1_3c8gu")
 script = ExtResource("2_0ad2e")
 
 [node name="Body" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
-position = Vector2(-18, -12)
+position = Vector2(-13, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1bqek")
 
@@ -39,8 +90,15 @@ shape = SubResource("CapsuleShape2D_add52")
 position = Vector2(132, -112)
 shape = SubResource("CapsuleShape2D_add52")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Body"]
+position = Vector2(-35, -26)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hbipr")
+
 [node name="Head" type="Area2D" parent="."]
 position = Vector2(124, -189)
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Head"]
 shape = SubResource("CircleShape2D_rr1tn")
@@ -48,6 +106,8 @@ debug_color = Color(0.6, 0.541176, 0, 0.419608)
 
 [node name="Leg" type="Area2D" parent="."]
 position = Vector2(-16, 210)
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Leg"]
 position = Vector2(-20.5, -61)
@@ -57,6 +117,41 @@ debug_color = Color(0.113725, 0.619608, 0.541176, 0.419608)
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Leg"]
 shape = SubResource("RectangleShape2D_20wol")
 debug_color = Color(0.113725, 0.619608, 0.541176, 0.419608)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera2D")
+libraries = {
+"": SubResource("AnimationLibrary_wy4yp")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_8xxx6")
+texture = ExtResource("3_aq2it")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_8xxx6")
+texture = ExtResource("4_v5ilu")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_8xxx6")
+texture = ExtResource("5_cdj2q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
 
 [connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
 [connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]
