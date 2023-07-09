@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level
 
 var currentForm
 # 0 = Player, 1 = Bullet
@@ -6,6 +7,9 @@ var currentForm
 var player
 
 var zoom
+
+var emus : Array
+
 var targetZoom
 const PLAYERZOOM = 0.6
 const BULLETZOOM = 1.2
@@ -16,6 +20,9 @@ func _ready():
 	currentForm = 0
 	zoom = PLAYERZOOM
 	targetZoom = zoom
+	for child in get_children():
+		if child is Emu:
+			emus.append(child)
 
 func _process(delta):
 	slowZoom()
@@ -26,6 +33,8 @@ func _process(delta):
 			changeToBullet()
 		else:
 			changeToPlayer()
+	
+	
 
 func changeToBullet():
 	$Bullet.processing = true
@@ -55,3 +64,18 @@ func slowZoom():
 			zoom+=0.01
 		elif targetZoom-zoom < 0:
 			zoom-=0.01
+
+
+func emus_dead() -> bool:
+	for emu in emus:
+		if !emu.dead:
+			return false
+	return true
+
+
+func _on_area_2d_body_entered(body):
+	if body is Player:
+		GlobalVar.world = load("res://scenes/World.tscn")
+		
+		get_tree().change_scene_to_packed(GlobalVar.world)
+	pass # Replace with function body.

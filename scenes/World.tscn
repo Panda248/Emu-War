@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dthj3hrinvvj6"]
+[gd_scene load_steps=16 format=3 uid="uid://dthj3hrinvvj6"]
 
 [ext_resource type="Texture2D" uid="uid://pf8bsti6u4vm" path="res://assets/park.png" id="1_kph8d"]
 [ext_resource type="Script" path="res://scenes/World.gd" id="1_nxnu0"]
@@ -54,6 +54,14 @@ size = Vector2(879, 1489)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpj5i"]
 size = Vector2(8047.5, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp5vb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b057n"]
+size = Vector2(363, 791)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6ty5"]
+size = Vector2(307, 692)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nxnu0")
@@ -169,11 +177,27 @@ texture = ExtResource("2_1odfo")
 
 [node name="Area2D" type="Area2D" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2565, 1247)
+scale = Vector2(-18.926, -32.3871)
+shape = SubResource("RectangleShape2D_sp5vb")
+
 [node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(3981.5, 1316.5)
+shape = SubResource("RectangleShape2D_b057n")
 
 [node name="Area2D2" type="Area2D" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(5442.5, 1281)
+shape = SubResource("RectangleShape2D_e6ty5")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D3" to="." method="_on_area_2d_3_area_entered"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
 
 [editable path="Player"]
