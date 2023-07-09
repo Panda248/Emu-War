@@ -1,29 +1,141 @@
-[gd_scene load_steps=4 format=3 uid="uid://dthj3hrinvvj6"]
+[gd_scene load_steps=13 format=3 uid="uid://dthj3hrinvvj6"]
 
 [ext_resource type="Texture2D" uid="uid://pf8bsti6u4vm" path="res://assets/park.png" id="1_kph8d"]
+[ext_resource type="Script" path="res://scenes/World.gd" id="1_nxnu0"]
+[ext_resource type="Texture2D" uid="uid://dlxrylef48wps" path="res://assets/parkforegound.png" id="2_1odfo"]
+[ext_resource type="Shader" path="res://assets/shaders/shakyText.gdshader" id="2_bdoyg"]
 [ext_resource type="PackedScene" uid="uid://8ytecw1tw4y" path="res://Player.tscn" id="2_fj03t"]
+[ext_resource type="Theme" uid="uid://clpweojj78lm1" path="res://assets/themes/CutsceneText.tres" id="2_mqkdx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5hyc"]
+size = Vector2(1396.5, 1585)
+
+[sub_resource type="Animation" id="Animation_wdiec"]
+resource_name = "end"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtnsy"]
+_data = {
+"end": SubResource("Animation_wdiec")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3a3mn"]
+shader = ExtResource("2_bdoyg")
+shader_parameter/height = 3.0
+shader_parameter/frequency = 2.0
+shader_parameter/speed = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dir1s"]
+size = Vector2(879, 1489)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpj5i"]
-size = Vector2(3923, 31)
+size = Vector2(8047.5, 31)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_nxnu0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_kph8d")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect"]
+[node name="End" type="Area2D" parent="."]
+position = Vector2(579, -92)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D"]
-position = Vector2(1963.5, 1007.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(6221.75, 763)
+shape = SubResource("RectangleShape2D_e5hyc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -438.0
+offset_top = -485.0
+offset_right = 8431.0
+offset_bottom = 2495.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
+z_index = 5
+position = Vector2(5975, 1129)
+enabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../../End")
+libraries = {
+"": SubResource("AnimationLibrary_qtnsy")
+}
+
+[node name="Label" type="Label" parent="."]
+z_index = 4
+material = SubResource("ShaderMaterial_3a3mn")
+offset_left = 5619.0
+offset_top = 1066.0
+offset_right = 6381.0
+offset_bottom = 1199.0
+theme = ExtResource("2_mqkdx")
+theme_override_font_sizes/font_size = 90
+text = "To be continued..."
+visible_characters = 0
+visible_ratio = 0.01
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(440.5, 711.5)
+shape = SubResource("RectangleShape2D_dir1s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7635, 743)
+shape = SubResource("RectangleShape2D_dir1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3990.25, 1466)
 shape = SubResource("RectangleShape2D_bpj5i")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_right = 8000.0
+offset_bottom = 2000.0
+texture = ExtResource("1_kph8d")
+
 [node name="Player" parent="." instance=ExtResource("2_fj03t")]
-position = Vector2(698, 756)
+position = Vector2(1156, 1286)
+scale = Vector2(0.7, 0.7)
+inHub = true
 
 [node name="CollisionShape2D" parent="Player" index="1"]
-position = Vector2(1, 9)
+visible = false
+position = Vector2(-18, 3)
 
 [node name="Gun" parent="Player" index="2"]
 visible = false
@@ -35,7 +147,33 @@ visible = false
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
-position = Vector2(4, -66)
+position = Vector2(2, -188)
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 5
+position = Vector2(1156, 1286)
+scale = Vector2(0.7, 0.7)
+motion_scale = Vector2(1.2, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+offset_left = -125.714
+offset_top = -1268.57
+offset_right = 7874.29
+offset_bottom = 731.428
+texture = ExtResource("2_1odfo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
 
 [editable path="Player"]
