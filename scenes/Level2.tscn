@@ -31,9 +31,12 @@ layer_0/tile_data = PackedInt32Array(655400, 196615, 3, 589864, 196615, 1, 65539
 
 [node name="Bullet" parent="." instance=ExtResource("4_6h8s6")]
 visible = false
+collision_layer = 4
 
 [node name="Player" parent="." instance=ExtResource("5_tmvrc")]
 position = Vector2(14, 898)
+collision_layer = 2
+collision_mask = 3
 
 [node name="LinkedDoor" parent="." instance=ExtResource("6_qadhm")]
 position = Vector2(1144, 1011)

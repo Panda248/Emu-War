@@ -44,6 +44,7 @@ func changeToBullet():
 	player.controlling = false
 	currentForm = 1
 	$Bullet.position = $Player/Gun/Point.global_position
+	$Bullet.rotation = $Player/Gun.rotation
 	player = $Bullet
 	$Bullet.visible = true
 	$Bullet/CollisionShape2D.disabled = false
