@@ -1,7 +1,41 @@
-[gd_scene format=3 uid="uid://dthj3hrinvvj6"]
+[gd_scene load_steps=4 format=3 uid="uid://dthj3hrinvvj6"]
+
+[ext_resource type="Texture2D" uid="uid://pf8bsti6u4vm" path="res://assets/park.png" id="1_kph8d"]
+[ext_resource type="PackedScene" uid="uid://8ytecw1tw4y" path="res://Player.tscn" id="2_fj03t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpj5i"]
+size = Vector2(3923, 31)
 
 [node name="World" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("1_kph8d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D"]
+position = Vector2(1963.5, 1007.5)
+shape = SubResource("RectangleShape2D_bpj5i")
+
+[node name="Player" parent="." instance=ExtResource("2_fj03t")]
+position = Vector2(698, 756)
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+position = Vector2(1, 9)
+
+[node name="Gun" parent="Player" index="2"]
+visible = false
+
+[node name="LeftHand" parent="Player" index="3"]
+visible = false
+
+[node name="RightHand" parent="Player" index="4"]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
+position = Vector2(4, -66)
+
+[editable path="Player"]
