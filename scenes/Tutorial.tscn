@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://j4kjsp4sikc2"]
+[gd_scene load_steps=26 format=3 uid="uid://nbsnic31lfpq"]
 
-[ext_resource type="Script" path="res://scripts/World.gd" id="1_avbdp"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_qlw7s"]
 [ext_resource type="Texture2D" uid="uid://bt8aes4bxtqne" path="res://assets/house.png" id="2_fa712"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_werab"]
 [ext_resource type="Texture2D" uid="uid://blfaebh4njttp" path="res://marbleset.png" id="3_7whw0"]
@@ -1801,7 +1801,7 @@ radius = 18.9507
 height = 54.2225
 
 [node name="Tutorial" type="Node2D"]
-script = ExtResource("1_avbdp")
+script = ExtResource("1_qlw7s")
 
 [node name="Area2D" type="Area2D" parent="."]
 
