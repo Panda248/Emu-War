@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://LinkedDoor.gd" id="1_oxaor"]
 [ext_resource type="Texture2D" uid="uid://ectf4i5twk5f" path="res://istockphoto-1370315503-612x612.jpg" id="2_6u7gc"]
-[ext_resource type="Texture2D" uid="uid://nikovfgs4vwp" path="res://New Piskel (1).png" id="3_6abc5"]
+[ext_resource type="Texture2D" uid="uid://iq50av6jx05o" path="res://assets/door.png" id="3_oibn7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kn1uj"]
 radius = 14.254
@@ -15,6 +15,8 @@ size = Vector2(63, 117)
 
 [node name="LinkedDoor" type="Node2D"]
 script = ExtResource("1_oxaor")
+buttonUnpressed = ExtResource("2_6u7gc")
+buttonPressed = ExtResource("2_6u7gc")
 
 [node name="Target" type="Sprite2D" parent="."]
 position = Vector2(-268, 0)
@@ -40,9 +42,9 @@ position = Vector2(271, -5)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
-position = Vector2(0, 26.5)
-scale = Vector2(1, 1.82813)
-texture = ExtResource("3_6abc5")
+position = Vector2(-0.499999, 27.5)
+scale = Vector2(1.96875, 1.82813)
+texture = ExtResource("3_oibn7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(-0.5, 27.5)

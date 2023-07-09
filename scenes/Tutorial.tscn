@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://j4kjsp4sikc2"]
+[gd_scene load_steps=16 format=3 uid="uid://j4kjsp4sikc2"]
 
 [ext_resource type="Script" path="res://scripts/World.gd" id="1_avbdp"]
 [ext_resource type="Texture2D" uid="uid://bt8aes4bxtqne" path="res://assets/house.png" id="2_fa712"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8d1wkfnelr10" path="res://LinkedDoor.tscn" id="6_aykwx"]
 [ext_resource type="Texture2D" uid="uid://dm1g1b586oald" path="res://assets/buttonhome.png" id="8_5nb7y"]
 [ext_resource type="Texture2D" uid="uid://dpb734pjlpvqu" path="res://assets/buttonhomepressed.png" id="9_cr4sf"]
+[ext_resource type="PackedScene" uid="uid://c1fvcopl8oanq" path="res://scenes/Emu.tscn" id="10_ijxaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgy8"]
 size = Vector2(3952, 174)
@@ -235,7 +236,7 @@ layer_0/tile_data = PackedInt32Array(327694, 131073, 2, 262158, 131073, 0, 32769
 script = ExtResource("2_werab")
 
 [node name="Bullet" parent="." instance=ExtResource("4_db68m")]
-visible = false
+position = Vector2(-770, 1180)
 
 [node name="Player" parent="." instance=ExtResource("5_u0dri")]
 position = Vector2(-1372, 175)
@@ -261,5 +262,8 @@ position = Vector2(290, -262)
 scale = Vector2(4.94216, 3.82312)
 collision_layer = 2
 collision_mask = 0
+
+[node name="Emu" parent="." instance=ExtResource("10_ijxaw")]
+position = Vector2(-380, 144)
 
 [editable path="LinkedDoor"]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3f2pmcvngwt6" path="res://assets/gun.png" id="2_a80c6"]
 
 [node name="Gun" type="Node2D"]
+light_mask = 3
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_61b7x")
 
