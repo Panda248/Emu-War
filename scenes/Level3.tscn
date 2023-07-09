@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwqqpj6e5t6oo"]
+[gd_scene load_steps=9 format=3 uid="uid://bgwa40m8dsldp"]
 
 [ext_resource type="Script" path="res://scripts/World.gd" id="1_3824v"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_vl2m3"]
@@ -7,10 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://8ytecw1tw4y" path="res://Player.tscn" id="5_06jqd"]
 [ext_resource type="PackedScene" uid="uid://b8d1wkfnelr10" path="res://LinkedDoor.tscn" id="6_8b6gs"]
 [ext_resource type="PackedScene" uid="uid://c1fvcopl8oanq" path="res://scenes/Emu.tscn" id="7_4k2ng"]
-[ext_resource type="PackedScene" uid="uid://dkhakbdtsh7ok" path="res://FakeTarget.tscn" id="8_5a8lc"]
+[ext_resource type="PackedScene" path="res://FakeTarget.tscn" id="8_5a8lc"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_3824v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -13411.0
+offset_top = -5156.0
+offset_right = -11668.0
+offset_bottom = -4171.0
+scale = Vector2(12.08, 12.76)
+color = Color(0.741176, 0.847059, 0.917647, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -27,7 +35,7 @@ layer_0/tile_data = PackedInt32Array(786464, 196610, 3, 720928, 196610, 2, 65539
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("5_06jqd")]
-position = Vector2(-4098, 2172)
+position = Vector2(-4070, 2424)
 
 [node name="Emu" parent="." instance=ExtResource("7_4k2ng")]
 position = Vector2(3211, 1225)

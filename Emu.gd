@@ -1,10 +1,14 @@
 extends Sprite2D
 
+class_name Emu
+
 const ZOOM_SPEED = 0.001
 const ROTATE_SPEED = 0.5
 const DEPTH_MIN = 20
 const DEPTH_MAX = 100
 
+
+var dead = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -55,3 +59,8 @@ func kill(body : Bullet):
 	$GPUParticles2D3.set_deferred("emitting", true)
 	$Camera2D.make_current()
 	$Timer.start()
+
+
+func _on_timer_timeout():
+	dead = true
+	pass # Replace with function body.

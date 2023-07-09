@@ -156,3 +156,4 @@ ignore_rotation = false
 [connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
 [connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]
 [connection signal="body_entered" from="Leg" to="." method="_on_leg_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
