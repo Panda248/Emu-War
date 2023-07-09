@@ -16,4 +16,3 @@ func _process(_delta):
 
 	#else: 
 		#get_node("Sprite2D").set_flip_v(true)
-

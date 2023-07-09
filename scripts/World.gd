@@ -36,6 +36,7 @@ func changeToBullet():
 	$Bullet/CollisionShape2D.disabled = false
 	$Bullet.collision_layer = 1
 	targetZoom = BULLETZOOM
+	
 
 func changeToPlayer():
 	currentForm = 0

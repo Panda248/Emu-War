@@ -27,8 +27,8 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	move_and_slide()
+			
+		move_and_slide()
 	if get_global_mouse_position().x > global_position.x:
 		$Sprite2D.set_flip_h(false)
 		$Gun/Sprite2D.set_flip_v(false)

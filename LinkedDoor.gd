@@ -18,7 +18,7 @@ func _process(delta):
 func _on_target_body_entered(body):
 	if body != $Target/StaticBody:
 		$Door.visible = false
-		$Door/CollisionShape2D.disabled = true
+		$Door/CollisionShape2D.set_deferred("disabled", true)
 		$Door.collision_layer = 0
 		$Target.texture = buttonPressed
 

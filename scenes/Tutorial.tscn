@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://j4kjsp4sikc2"]
+[gd_scene load_steps=15 format=3 uid="uid://j4kjsp4sikc2"]
 
 [ext_resource type="Script" path="res://scripts/World.gd" id="1_avbdp"]
 [ext_resource type="Texture2D" uid="uid://bt8aes4bxtqne" path="res://assets/house.png" id="2_fa712"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://8ytecw1tw4y" path="res://Player.tscn" id="5_u0dri"]
 [ext_resource type="PackedScene" uid="uid://b8d1wkfnelr10" path="res://LinkedDoor.tscn" id="6_aykwx"]
 [ext_resource type="Texture2D" uid="uid://dm1g1b586oald" path="res://assets/buttonhome.png" id="8_5nb7y"]
+[ext_resource type="Texture2D" uid="uid://dpb734pjlpvqu" path="res://assets/buttonhomepressed.png" id="9_cr4sf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgy8"]
 size = Vector2(3952, 174)
@@ -188,6 +189,7 @@ height = 54.2225
 script = ExtResource("1_avbdp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
 texture = ExtResource("2_fa712")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
@@ -242,6 +244,8 @@ collision_mask = 3
 
 [node name="LinkedDoor" parent="." instance=ExtResource("6_aykwx")]
 position = Vector2(987, 303)
+buttonUnpressed = ExtResource("8_5nb7y")
+buttonPressed = ExtResource("9_cr4sf")
 
 [node name="Target" parent="LinkedDoor" index="0"]
 position = Vector2(744, -28)
