@@ -29,8 +29,8 @@ func _process(delta):
 	$Camera2D.zoom = Vector2(zoom, zoom)
 	if Input.is_action_just_pressed("shoot"):
 		if currentForm == 0:
-			$Bullet.rotation = $Player/Gun.rotation
-			changeToBullet()
+			$Player/Gun.shootAnimation()
+			$Bullet.rotation = self.rotation
 		else:
 			changeToPlayer()
 	
@@ -38,6 +38,7 @@ func _process(delta):
 
 func changeToBullet():
 	$Bullet.processing = true
+	player = $Player
 	player.controlling = false
 	currentForm = 1
 	$Bullet.position = $Player/Gun/Point.global_position

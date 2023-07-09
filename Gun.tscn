@@ -12,6 +12,14 @@ script = ExtResource("1_61b7x")
 position = Vector2(70, -26.6667)
 scale = Vector2(0.4, 0.4)
 sprite_frames = ExtResource("2_ffkjx")
+frame = 14
+frame_progress = 1.0
 
 [node name="Point" type="Marker2D" parent="."]
 position = Vector2(320, -76.6666)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
