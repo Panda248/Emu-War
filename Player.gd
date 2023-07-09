@@ -30,10 +30,10 @@ func _physics_process(delta):
 			
 		move_and_slide()
 	if get_global_mouse_position().x > global_position.x:
-		$Sprite2D.set_flip_h(false)
+		$AnimatedSprite2D.set_flip_h(false)
 		$Gun/Sprite2D.set_flip_v(false)
 		$Gun.position = $RightHand.position
 	else: 
-		$Sprite2D.set_flip_h(true)
+		$AnimatedSprite2D.set_flip_h(true)
 		$Gun/Sprite2D.set_flip_v(true)
 		$Gun.position = $LeftHand.position
