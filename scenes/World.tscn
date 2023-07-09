@@ -56,12 +56,13 @@ size = Vector2(879, 1489)
 size = Vector2(8047.5, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp5vb"]
+size = Vector2(29.0077, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b057n"]
-size = Vector2(363, 791)
+size = Vector2(549, 791)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6ty5"]
-size = Vector2(365, 692)
+size = Vector2(609, 692)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nxnu0")
@@ -178,26 +179,60 @@ texture = ExtResource("2_1odfo")
 [node name="Level1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1"]
-position = Vector2(2565, 1247)
-scale = Vector2(-18.926, -32.3871)
+position = Vector2(2555.5, 1247)
+rotation = -3.14159
+scale = Vector2(18.926, 32.3871)
 shape = SubResource("RectangleShape2D_sp5vb")
+
+[node name="Label" type="Label" parent="Level1"]
+offset_left = 2351.0
+offset_top = 938.0
+offset_right = 2789.0
+offset_bottom = 1070.0
+theme = ExtResource("2_mqkdx")
+text = "The beginning
+SPACE TO ENTER"
+horizontal_alignment = 1
 
 [node name="Level2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2"]
-position = Vector2(3981.5, 1316.5)
+position = Vector2(3990.5, 1316.5)
 shape = SubResource("RectangleShape2D_b057n")
+
+[node name="Label2" type="Label" parent="Level2"]
+offset_left = 3767.0
+offset_top = 931.0
+offset_right = 4205.0
+offset_bottom = 1063.0
+theme = ExtResource("2_mqkdx")
+text = "Killing Spree
+SPACE TO ENTER"
+horizontal_alignment = 1
 
 [node name="Level3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3"]
-position = Vector2(5413.5, 1281)
+position = Vector2(5411.5, 1281)
 shape = SubResource("RectangleShape2D_e6ty5")
+
+[node name="Label2" type="Label" parent="Level3"]
+offset_left = 5134.0
+offset_top = 931.0
+offset_right = 5683.0
+offset_bottom = 1063.0
+theme = ExtResource("2_mqkdx")
+text = "Crossing the Threshold
+SPACE TO ENTER"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
 [connection signal="body_entered" from="Level1" to="." method="_on_level_1_body_entered"]
+[connection signal="body_exited" from="Level1" to="." method="_on_level_1_body_exited"]
 [connection signal="body_entered" from="Level2" to="." method="_on_level_2_body_entered"]
+[connection signal="body_exited" from="Level2" to="." method="_on_level_2_body_exited"]
 [connection signal="body_entered" from="Level3" to="." method="_on_level_3_body_entered"]
+[connection signal="body_exited" from="Level3" to="." method="_on_level_3_body_exited"]
 
 [editable path="Player"]
